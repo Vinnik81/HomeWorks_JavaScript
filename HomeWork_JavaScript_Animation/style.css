@@ -1,0 +1,28 @@
+body {
+  width: 1150px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .red {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border: 1px solid black;
+  position: relative;
+}
+body .blue {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  border: 1px solid black;
+  position: relative;
+}
+body .green {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  border: 1px solid black;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */

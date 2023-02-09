@@ -1,0 +1,36 @@
+body{
+
+    width: 1150px;
+    height: 900px;
+
+    .red{
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border: 1px solid black;
+        position: relative;
+        //transition: 0.9s;
+    }
+
+    .blue{
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        border: 1px solid black;
+        position: relative;
+        //transition: 0.9s;
+    }
+
+    .green{
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        border: 1px solid black;
+        position: relative;
+        //transition: 0.9s;
+    }
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
