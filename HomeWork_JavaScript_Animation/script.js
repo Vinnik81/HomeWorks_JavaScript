@@ -1,6 +1,8 @@
 let elem = prompt("Введите цвет фигуры(red, blue, green)");
 let anim = prompt("Какую анимацию вы хотите запустить: \n1 - rotate; \n2 - scale; \n3 - color; \n4 - edge");
 let speed = prompt("Введите скорость анимации в милисекундах");
+let isLeft = true;
+let isTop = true;
 
 function random(){
     return Math.floor(Math.random()*255);
@@ -60,38 +62,48 @@ switch(elem)
 
         else if (anim == 4)
         {
+            elemRed.style.setProperty('position', 'absolute');
             let id = setInterval(edge, speed);
-            function edge(){
-                let styles = getComputedStyle(elemRed);
-                let left = 100 + parseInt(styles.left);
-                let right = 100 + parseInt(styles.right);
-                let top = 100 + parseInt(styles.top);
-                let bottom = 100 + parseInt(styles.bottom);
-                
-                function rightEl(){
-                   return elemRed.style.setProperty('right', `${right}px`);
-                }
-                
-                    function topEl(){
-                       return elemRed.style.setProperty('top', `${top}px`);
-                    }
-                    
-                function leftEl(){
-                    return elemRed.style.setProperty('left', `${left}px`);
-                }
 
-                function bottomEl(){
-                    return elemRed.style.setProperty('bottom', `${bottom}px`);
-                }
-                
-                rightEl();
-                if (right >= window.innerWidth - 614){
-                    clearInterval(id);
-                }
-                 //if (right >= window.innerWidth - 614) bottomEl();
-                // if (bottom >= window.innerHeight) leftEl();
-                // if (left >= window.innerWidth) topEl();
+            function edge() {
+            let box = getComputedStyle(elemRed);
+    
+            if (isLeft && parseInt(box.left) < parseInt(window.innerWidth) - 220) {
+                let left = parseInt(box.left) + 100;
+                elemRed.style.setProperty('left', `${left}px`);
             }
+
+            else if (isTop && parseInt(box.top) < parseInt(window.innerHeight) - 220) {
+                let top = parseInt(box.top) + 100;
+                elemRed.style.setProperty('top', `${top}px`);
+            }
+
+            else if (parseInt(box.left) > 90) {
+                isLeft = false;
+                let right = parseInt(box.left) - 100;
+                elemRed.style.setProperty('left', `${right}px`);
+            }
+
+            else if (parseInt(box.top) > 90) {
+                isTop = false;
+                let bottom = parseInt(box.top) - 100;
+                elemRed.style.setProperty('top', `${bottom}px`);
+            }
+
+            else {
+                isLeft = true;
+                isTop = true;
+                }
+            }
+       
+            function stop() {
+                clearInterval(id);
+                elemRed.style.left = '0px';
+                elemRed.style.top = '0px';
+                elemRed.style.position = 'relative';
+            }
+
+            setTimeout(stop, 15 * 1000);
         }
 
         else{
@@ -143,6 +155,53 @@ switch(elem)
             }
             setTimeout(stop, 5 * 1000);
         }
+
+        else if (anim == 4)
+        {
+            elemBlue.style.setProperty('position', 'absolute');
+            let id = setInterval(edge, speed);
+
+            function edge() {
+            let box = getComputedStyle(elemBlue);
+    
+            if (isLeft && parseInt(box.left) < parseInt(window.innerWidth) - 220) {
+                let left = parseInt(box.left) + 100;
+                elemBlue.style.setProperty('left', `${left}px`);
+            }
+
+            else if (isTop && parseInt(box.top) < parseInt(window.innerHeight) - 200) {
+                let top = parseInt(box.top) + 100;
+                elemBlue.style.setProperty('top', `${top}px`);
+            }
+
+            else if (parseInt(box.left) > 90) {
+                isLeft = false;
+                let right = parseInt(box.left) - 100;
+                elemBlue.style.setProperty('left', `${right}px`);
+            }
+
+            else if (parseInt(box.top) > 80) {
+                isTop = false;
+                let bottom = parseInt(box.top) - 100;
+                elemBlue.style.setProperty('top', `${bottom}px`);
+            }
+
+            else {
+                isLeft = true;
+                isTop = true;
+                }
+            }
+       
+            function stop() {
+                clearInterval(id);
+                elemBlue.style.left = '0px';
+                elemBlue.style.top = '0px';
+                elemBlue.style.position = 'relative';
+            }
+
+            setTimeout(stop, 15 * 1000);
+        }
+
         else{
             alert("Вы ввели неправильные значения!")
         }
@@ -192,6 +251,53 @@ switch(elem)
             }
             setTimeout(stop, 5 * 1000);
         }
+
+        else if (anim == 4)
+        {
+            elemGreen.style.setProperty('position', 'absolute');
+            let id = setInterval(edge, speed);
+
+            function edge() {
+            let box = getComputedStyle(elemGreen);
+    
+            if (isLeft && parseInt(box.left) < parseInt(window.innerWidth) - 220) {
+                let left = parseInt(box.left) + 100;
+                elemGreen.style.setProperty('left', `${left}px`);
+            }
+
+            else if (isTop && parseInt(box.top) < parseInt(window.innerHeight) - 220) {
+                let top = parseInt(box.top) + 100;
+                elemGreen.style.setProperty('top', `${top}px`);
+            }
+
+            else if (parseInt(box.left) > 90) {
+                isLeft = false;
+                let right = parseInt(box.left) - 100;
+                elemGreen.style.setProperty('left', `${right}px`);
+            }
+
+            else if (parseInt(box.top) > 80) {
+                isTop = false;
+                let bottom = parseInt(box.top) - 100;
+                elemGreen.style.setProperty('top', `${bottom}px`);
+            }
+
+            else {
+                isLeft = true;
+                isTop = true;
+                }
+            }
+       
+            function stop() {
+                clearInterval(id);
+                elemGreen.style.left = '0px';
+                elemGreen.style.top = '0px';
+                elemGreen.style.position = 'relative';
+            }
+
+            setTimeout(stop, 15 * 1000);
+        }
+
         else{
             alert("Вы ввели неправильные значения!")
         }
