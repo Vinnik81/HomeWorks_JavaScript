@@ -14,8 +14,12 @@ body {
             color: cornflowerblue;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: left;
             background-color: burlywood;
+                
+            p{
+                padding-left: 60px;
+            }
         }
 
         .box {

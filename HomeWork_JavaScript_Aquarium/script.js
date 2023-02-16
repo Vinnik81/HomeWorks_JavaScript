@@ -14,10 +14,20 @@ let div = document.createDocumentFragment();
         }
             container.appendChild(div);
 
-let nav = document.querySelectorAll('p')[2];
-
+let nav = document.querySelectorAll('p')[4];
 if (count) {
-    nav.innerText = count;
+    nav.innerHTML = count;
+}
+
+let second = 60;
+let min = setInterval(timer, 1000);
+   function timer() {
+let nav = document.querySelector('#timer');
+nav.innerHTML = second--;
+if (second == 0) {
+    clearInterval(min);
+    alert("Время вышло. Вы проиграли!!!");
+}
 }
 
 let isLeft = true;
@@ -54,11 +64,14 @@ for (const box of document.querySelectorAll('.box')) {
             isLeft = true;
             isTop = true;
         }
-
-        box.addEventListener('click', ()=> {
-            event.target.remove();
-        });
-        
-
     }, 500);
+
+    box.addEventListener('click', ()=> {
+        event.target.remove();
+        if (count >=0) {
+            count--;
+            nav.innerHTML = count; 
+            if (count == 0) alert("Вы выиграли!!!");
+        }
+    });
  }

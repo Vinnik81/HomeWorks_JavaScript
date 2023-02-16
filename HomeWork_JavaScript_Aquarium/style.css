@@ -13,8 +13,11 @@ body .container .nav {
   color: cornflowerblue;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
   background-color: burlywood;
+}
+body .container .nav p {
+  padding-left: 60px;
 }
 body .container .box {
   width: 100px;
