@@ -19,7 +19,13 @@ if (count) {
     nav.innerHTML = count;
 }
 
-let second = 60;
+let second = 30;
+if (count == 60) second = 60;
+
+else if (count >= 70 && count <= 120) {second = 120;}
+
+else if (count > 120) second = 300;
+    
 let min = setInterval(timer, 1000);
    function timer() {
 let nav = document.querySelector('#timer');
@@ -44,26 +50,31 @@ for (const box of document.querySelectorAll('.box')) {
 
         if (isLeft && left <= window.innerWidth - 100) {
             box.style.setProperty('left', `${left}px`);
+            box.style.transform = "rotate(0deg)";
         }
 
         else if (isTop && top <= window.innerHeight - 100) {
             box.style.setProperty('top', `${top}px`);
+            box.style.transform = "rotate(45deg)";
         }
-        
+
         else if (left > 150) {
             isLeft = false;
             box.style.setProperty('left', `${right}px`);
+            box.style.transform = "rotate(180deg)";
         }
 
         else if (top > 150) {
             isTop = false;
             box.style.setProperty('top', `${bottom}px`);
+            box.style.transform = "rotate(270deg)";
         }
 
         else {
             isLeft = true;
-            isTop = true;
+            isTop = true; 
         }
+
     }, 500);
 
     box.addEventListener('click', ()=> {
@@ -71,7 +82,10 @@ for (const box of document.querySelectorAll('.box')) {
         if (count >=0) {
             count--;
             nav.innerHTML = count; 
-            if (count == 0) alert("Вы выиграли!!!");
+            if (count == 0) {
+                clearInterval(min);
+                alert("Вы выиграли!!!");
+            }
         }
     });
  }
