@@ -55,10 +55,16 @@ let clear = document.getElementById('btnClear');
 
 
 function clearList() {
-    ul.remove();
-    let item = document.createElement('li');
-    item.innerHTML = document.forms.toDoForm.title.value + ' <input id="date" type="date" value="date">' + "<span>❌</span>";
-    document.getElementById('tasks').append(item);
+    if (clear) {
+        ul.innerHTML = "";
+    }
+    else {
+        let item = document.createElement('li');
+        item.innerHTML = document.forms.toDoForm.title.value + ' <input id="date" type="date" value="date">' + "<span>❌</span>";
+        document.getElementById('tasks').append(item);
+    }
+    
+    
 }
 
 clear.addEventListener("click", clearList, false);

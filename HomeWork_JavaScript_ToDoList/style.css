@@ -9,6 +9,7 @@ body #btnClear {
 
 .done {
   text-decoration: line-through;
+  color: green;
 }
 
 span {
