@@ -1,0 +1,21 @@
+body {
+    margin-top: 120px;
+
+    #btnClear {
+        margin-top: 10px;
+        margin-left: 40px;
+        width: 226px;
+    }
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+span {
+    cursor: pointer;
+}
+
+* {
+    user-select: none;
+}

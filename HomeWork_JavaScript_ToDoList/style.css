@@ -1,0 +1,22 @@
+body {
+  margin-top: 120px;
+}
+body #btnClear {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 226px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+span {
+  cursor: pointer;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}/*# sourceMappingURL=style.css.map */
