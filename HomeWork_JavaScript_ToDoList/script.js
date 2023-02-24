@@ -29,7 +29,7 @@ document.forms.toDoForm.addEventListener('submit', () => {
     event.preventDefault();
 
     let item = document.createElement('li');
-    item.innerHTML = document.forms.toDoForm.title.value + ' <input id="date" type="date" value="date">' + "<span>❌</span>";
+    item.innerHTML = document.forms.toDoForm.title.value  + "<span>❌</span>" + ' <input id="date" type="date" value="date">';
     document.getElementById('tasks').append(item);
 
     //  document.forms.toDoForm.title.value = '';

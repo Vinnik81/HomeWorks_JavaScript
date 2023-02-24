@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-     <ul id="tasks">
-        <li>Ольга <input id="date" type="date" value="date"> <span>❌</span></li>
-        <li>Динис <input id="date" type="date" value="date"> <span>❌</span></li>
-        <li>Павел <input id="date" type="date" value="date"> <span>❌</span></li>
+    <h1>CRUD</h1>
+    <div class="crud">
+        <div class="list">
+        <ul id="tasks">
+        <li>Ольга  <span>❌</span> <input id="date" type="date" value="date"></li>
+        <li>Динис  <span>❌</span> <input id="date" type="date" value="date"></li>
+        <li>Павел  <span>❌</span> <input id="date" type="date" value="date"></li>
     </ul>
 
     <form name="toDoForm">
@@ -20,6 +23,9 @@
         <button>Add</button>
     </form>
     <button id="btnClear">Clear</button>
+    </div>
+<img src="./image/CRUD.jpeg" alt="Crud">
+    </div>
 
     <script defer src="./script.js"></script>
 </body>
