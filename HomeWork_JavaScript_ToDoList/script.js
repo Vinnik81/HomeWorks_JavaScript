@@ -1,4 +1,5 @@
 let array = [];
+//let theme = [];
 
 document.forms.toDoForm.addEventListener('submit', () => {
     event.preventDefault();
@@ -14,7 +15,7 @@ document.forms.toDoForm.addEventListener('submit', () => {
 
 function drawItem(obj) {
     let item = document.createElement('li');
-    item.innerHTML = obj.title  + "<span>❌</span>" + ' <input id="date" type="date" value="">';
+    item.innerHTML = obj.title  + "<span>❌</span>" + ' <input id="date" type="date" value="2023-02-26">';
     document.getElementById('tasks').append(item);
     
 }
@@ -105,9 +106,9 @@ document.querySelector('#btnClear').style.color = '#282929';
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-let style = localStorage.getItem('class');
+let style = localStorage.getItem("class");
 console.log(style);
-document.querySelector('body').classList.add(style);
+//document.querySelector('body').classList.add(style);
 let data = localStorage.getItem('array');
 
 if (data) {
@@ -117,20 +118,34 @@ if (data) {
         drawItem(item);
     }
 }
+
+if (style) {
+   let theme = JSON.parse(localStorage.getItem(style));
+
+    
+        document.querySelector('body').classList.add(theme);
+    
+}
 });
 
 document
 .querySelector('#btn1')
 .addEventListener('click', () => {
-    localStorage.setItem('class', document.querySelector('body').classList.add('darkGrayTheme'));
-    
+     elem1 = document.querySelector('body');
+     elem1.classList.add('darkGrayTheme');
+     //theme.push(elem1);
+    localStorage.setItem('class', JSON.stringify(elem1));
+    //event.target.classList.add('darkGrayTheme')
 });
 
 document
 .querySelector('#btn2')
 .addEventListener('click', () => {
-    localStorage.setItem('class', document.querySelector('body').classList.add('aquaTheme'));
-    
+ elem2 = document.querySelector('body');
+ elem2.classList.add('aquaTheme');
+ //theme.push(elem2);
+localStorage.setItem('class', JSON.stringify(elem2));
+//event.target.classList.add('aquaTheme')
 // document.querySelector('h1').style.backgroundColor = '#4fd77f';
 // document.querySelector('h1').style.color = 'darkblue';
 // document.querySelector('button').style.backgroundColor = '#4fd77f';
@@ -142,8 +157,10 @@ document
 document
 .querySelector('#btn3')
 .addEventListener('click', () => {
-    localStorage.setItem('class', document.querySelector('body').classList.add('antiquewhiteTheme'));
-    
+//    elem3 = document.querySelector('body').classList.add('antiquewhiteTheme');
+//    theme.push(elem3);
+localStorage.setItem('class', "antiquewhiteTheme");
+event.target.classList.add('antiquewhiteTheme')
 // document.querySelector('h1').style.backgroundColor = '#dac5b0';
 // document.querySelector('h1').style.color = '#282929';
 // document.querySelector('button').style.backgroundColor = '#fed55f';
