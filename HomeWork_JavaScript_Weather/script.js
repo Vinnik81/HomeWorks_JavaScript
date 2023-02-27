@@ -25,13 +25,33 @@ searchForm.addEventListener('submit', async function() {
 
     let weatherDates = await weatherApi.getWeatherDatesByCityName(cityName);
     console.log(weatherDates);
-    document.querySelector('.dates').innerHTML += `<div class="col-12">
+    document.querySelector('.dates').innerHTML += `<div class="col-sm-3">
     <div class="card">
         <img src="http://openweathermap.org/img/wn/${weatherDates.list[2].weather[0].icon}@2x.png" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[2].main.temp)} ℃</h5>
             <p class="card-text">${weatherDates.list[2].weather[0].description}</p>
             <h5 class="card-title">${weatherDates.list[2].dt_txt}</h5>
+        </div>
+        </div>
+        </div>
+        <div class="col-sm-3">
+        <div class="card">
+        <img src="http://openweathermap.org/img/wn/${weatherDates.list[10].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[10].main.temp)} ℃</h5>
+            <p class="card-text">${weatherDates.list[10].weather[0].description}</p>
+            <h5 class="card-title">${weatherDates.list[10].dt_txt}</h5>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+        <div class="card">
+        <img src="http://openweathermap.org/img/wn/${weatherDates.list[18].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[18].main.temp)} ℃</h5>
+            <p class="card-text">${weatherDates.list[18].weather[0].description}</p>
+            <h5 class="card-title">${weatherDates.list[18].dt_txt}</h5>
         </div>
     </div>
 </div>`
