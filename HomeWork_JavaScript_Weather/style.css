@@ -6,6 +6,10 @@ img {
 }
 
 .dates {
-  width: 680px;
+  width: 1320px;
   height: 200px;
+}
+
+body {
+  background-image: url(./1659482733_25-26.jpg);
 }/*# sourceMappingURL=style.css.map */

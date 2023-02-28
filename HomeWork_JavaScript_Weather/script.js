@@ -10,9 +10,9 @@ searchForm.addEventListener('submit', async function() {
     let cityName = searchForm.city.value;
     let weatherData = await weatherApi.getWeatherDataByCityName(cityName);
     console.log(weatherData);
-    document.querySelector('.history').innerHTML += `
+    document.querySelector('.history').innerHTML = `
 <div class="col-12">
-                <div class="card">
+                <div class="card text-bg-info">
                     <img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">${cityName } ${Math.round(weatherData.main.temp)} ℃</h5>
@@ -25,8 +25,8 @@ searchForm.addEventListener('submit', async function() {
 
     let weatherDates = await weatherApi.getWeatherDatesByCityName(cityName);
     console.log(weatherDates);
-    document.querySelector('.dates').innerHTML += `<div class="col-sm-3">
-    <div class="card">
+    document.querySelector('.dates').innerHTML = `<div class="col-sm-2">
+    <div class="card text-bg-primary">
         <img src="http://openweathermap.org/img/wn/${weatherDates.list[2].weather[0].icon}@2x.png" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[2].main.temp)} ℃</h5>
@@ -35,8 +35,8 @@ searchForm.addEventListener('submit', async function() {
         </div>
         </div>
         </div>
-        <div class="col-sm-3">
-        <div class="card">
+        <div class="col-sm-2">
+        <div class="card text-bg-primary">
         <img src="http://openweathermap.org/img/wn/${weatherDates.list[10].weather[0].icon}@2x.png" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[10].main.temp)} ℃</h5>
@@ -45,13 +45,43 @@ searchForm.addEventListener('submit', async function() {
         </div>
     </div>
 </div>
-<div class="col-sm-3">
-        <div class="card">
+<div class="col-sm-2">
+        <div class="card text-bg-primary">
         <img src="http://openweathermap.org/img/wn/${weatherDates.list[18].weather[0].icon}@2x.png" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[18].main.temp)} ℃</h5>
             <p class="card-text">${weatherDates.list[18].weather[0].description}</p>
             <h5 class="card-title">${weatherDates.list[18].dt_txt}</h5>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2">
+        <div class="card text-bg-primary">
+        <img src="http://openweathermap.org/img/wn/${weatherDates.list[20].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[20].main.temp)} ℃</h5>
+            <p class="card-text">${weatherDates.list[20].weather[0].description}</p>
+            <h5 class="card-title">${weatherDates.list[20].dt_txt}</h5>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2">
+        <div class="card text-bg-primary">
+        <img src="http://openweathermap.org/img/wn/${weatherDates.list[28].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[28].main.temp)} ℃</h5>
+            <p class="card-text">${weatherDates.list[28].weather[0].description}</p>
+            <h5 class="card-title">${weatherDates.list[28].dt_txt}</h5>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2">
+        <div class="card text-bg-primary">
+        <img src="http://openweathermap.org/img/wn/${weatherDates.list[36].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${cityName } ${Math.round(weatherDates.list[36].main.temp)} ℃</h5>
+            <p class="card-text">${weatherDates.list[36].weather[0].description}</p>
+            <h5 class="card-title">${weatherDates.list[36].dt_txt}</h5>
         </div>
     </div>
 </div>`
