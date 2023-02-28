@@ -15,6 +15,7 @@ searchForm.addEventListener('submit', async function() {
                 <div class="card text-bg-info">
                     <img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png" class="card-img-top" alt="...">
                     <div class="card-body">
+                    <h5 class="card-title">${weatherData.sys.country}</h5>
                     <h5 class="card-title">${cityName } ${Math.round(weatherData.main.temp)} ℃</h5>
                         <p class="card-text">${weatherData.weather[0].description}</p>
                     </div>
