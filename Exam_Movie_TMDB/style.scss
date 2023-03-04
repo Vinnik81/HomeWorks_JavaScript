@@ -1,0 +1,42 @@
+.logo {
+    width: 170px;
+}
+
+#navbarNavAltMarkup {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: darkblue; 
+    height: 80px;
+    cursor: pointer;
+    user-select: none;
+    min-width: auto;
+
+    a {
+        font-size: 20px !important;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.container {
+    min-width: 740px;
+}
+
+.Xbtn {
+    margin: 3px;
+    font-size: 25px;
+    display: none;
+}
+
+.content {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 1450px;
+}

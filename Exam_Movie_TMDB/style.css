@@ -1,0 +1,45 @@
+.logo {
+  width: 170px;
+}
+
+#navbarNavAltMarkup {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  background-color: darkblue;
+  height: 80px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  min-width: auto;
+}
+nav a {
+  font-size: 20px !important;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.container {
+  min-width: 740px;
+}
+
+.Xbtn {
+  margin: 3px;
+  font-size: 25px;
+  display: none;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  width: 1450px;
+}/*# sourceMappingURL=style.css.map */
