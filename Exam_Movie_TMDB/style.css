@@ -31,6 +31,41 @@ nav a {
   min-width: 740px;
 }
 
+.searchMovie {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  z-index: 0;
+  display: flex;
+  padding: 10px 80px;
+  align-items: center;
+}
+.searchMovie i {
+  margin-left: 20px;
+  font-size: 25px;
+}
+.searchMovie input {
+  margin-left: 40px;
+  height: 35px;
+  width: calc(100% - 100px);
+  border: none;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.searchMovie input:focus {
+  border: none;
+  outline: none;
+}
+.searchMovie input:-moz-placeholder-shown {
+  font-style: italic;
+  color: #acacac;
+}
+.searchMovie input:placeholder-shown {
+  font-style: italic;
+  color: #acacac;
+}
+
 .Xbtn {
   margin: 3px;
   font-size: 25px;
