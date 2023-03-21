@@ -201,6 +201,16 @@ body {
   height: max-content;
   border: none;
   background-color: white;
+  position: relative;
+}
+.infoRow:nth-child(2) #back {
+  box-sizing: content-box;
+  position: absolute;
+  bottom: 20px;
+  height: 60%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .infoRow:nth-child(2) .populars {
   padding: 20px 0px;
