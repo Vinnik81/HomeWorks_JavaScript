@@ -1,6 +1,15 @@
 const baseUrl = 'https://api.themoviedb.org/3';
 const apiKey = '19dca9034c3696b7ba3e9da47277db87';
 
+let isBlock = false;
+let totalPages = 0;
+let page = 1;
+let type = '';
+let option = '';
+let typeQ = "";
+let searchQ = "";
+let total_results = 0;
+
 function statisticUser() {
     let data = $('.statistic').find('.userPopular');
     for (const iterator of data) {
@@ -169,16 +178,6 @@ $('.popularsTrails').on('click', '.item', function(e) {
 
 });
 
-// let searchBtn = document.querySelector('.searchBtn');
-// let searchMovie = document.querySelector('.searhMovie');
-// let XBtn = document.querySelector('.XBtn');
-
-// searchBtn.addEventListener('click', ()=> {
-// searchMovie.style.height = 250 + 'px';
-// searchBtn.style.display = 'block';
-// XBtn.style.display = 'none';
-// });
-
 $('.searchBtn').click(function() {
     $('.searchMovie').slideDown(250);
     $('.searchBtn').hide();
@@ -199,11 +198,11 @@ $('#moviePage').on('mouseover', function() {
     $('.searchMovie').slideUp(50);
     $('.searchBtn').show();
     $('.XBtn').hide();
-    $('#subMenyuMovie').show();
+    $('#subMenuMovie').show();
 
 })
 $('#moviePage').on('mouseleave', function() {
-    $('#subMenyuMovie').hide();
+    $('#subMenuMovie').hide();
 })
 
 $('#subMenuMovie').on('mouseover', function() {
@@ -278,7 +277,7 @@ $('#subMenuElse').on('mouseover', function() {
     $('.searchMovie').slideUp(50);
     $('.searchBtn').show();
     $('.XBtn').hide();
-    $('#subMenyuElse').show();
+    $('#subMenuElse').show();
 })
 
 $('#subMenuElse').on('mouseleave', function() {
@@ -366,17 +365,17 @@ function random(min, max) {
 function randomImage(element) {
     let num = random(1, 7);
     if (num == 1) {
-        $(element).attr('src', './images/forest.jpg');
+        $(element).attr('src', './image/forest.jpg');
     } else if (num == 2) {
-        $(element).attr('src', './images/back2.jpg');
+        $(element).attr('src', './image/back2.jpg');
     } else if (num == 3) {
-        $(element).attr('src', './images/treiler.jpg');
+        $(element).attr('src', './image/treiler.jpg');
     } else if (num == 4) {
-        $(element).attr('src', './images/back3.jpg');
+        $(element).attr('src', './image/back3.jpg');
     } else if (num == 5) {
-        $(element).attr('src', './images/back4.jpg');
+        $(element).attr('src', './image/back4.jpg');
     } else if (num == 6) {
-        $(element).attr('src', './images/back5.jpg');
+        $(element).attr('src', './image/back5.jpg');
     }
 }
 
@@ -646,7 +645,7 @@ async function getInfo(id, type) {
                 if (movie.poster_path) {
                     movie.poster_path = `https://image.tmdb.org/t/p/w500/${ movie.poster_path}`;
                 } else {
-                    movie.poster_path = './images/notImg.png';
+                    movie.poster_path = './image/notImg.png';
                 }
 
 
@@ -672,7 +671,7 @@ async function getInfo(id, type) {
                 if (tv.poster_path) {
                     tv.poster_path = `https://image.tmdb.org/t/p/w500/${tv.poster_path}`;
                 } else {
-                    tv.poster_path = './images/notImg.png';
+                    tv.poster_path = './image/notImg.png';
                 }
 
 
@@ -1300,7 +1299,7 @@ async function loadNewItems(page = 1, type, searchQ) {
             if (movie.poster_path) {
                 movie.poster_path = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
             } else {
-                movie.poster_path = '/images/notImg.png';
+                movie.poster_path = '/image/notImg.png';
             }
 
             let item = template(movie);
@@ -1403,14 +1402,5 @@ async function AfterLoad() {
     modalWindow('#fontImg');
     modalWindow('.zoomCinema');
 }
-
-let isBlock = false;
-let totalPages = 0;
-let page = 1;
-let type = '';
-let option = '';
-let typeQ = "";
-let searchQ = "";
-let total_results = 0;
 
 AfterLoad();

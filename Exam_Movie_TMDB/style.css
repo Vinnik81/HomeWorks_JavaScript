@@ -99,7 +99,7 @@ nav a {
   position: relative;
 }
 .row div:nth-child(1) #headImg {
-  src: url("./images/forest.jpg");
+  src: url("./image/forest.jpg");
   position: absolute;
   height: 120%;
   width: 100%;
