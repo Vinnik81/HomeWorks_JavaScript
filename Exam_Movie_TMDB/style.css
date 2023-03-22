@@ -95,6 +95,15 @@ nav a {
   width: 1450px;
 }
 
+.cookies {
+  position: fixed;
+  bottom: 5px;
+  z-index: 1;
+}
+.cookies img {
+  width: 50px;
+}
+
 .row div:nth-child(1) {
   position: relative;
 }

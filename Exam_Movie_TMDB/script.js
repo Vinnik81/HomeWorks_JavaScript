@@ -363,7 +363,7 @@ function random(min, max) {
 }
 
 function randomImage(element) {
-    let num = random(1, 7);
+    let num = random(1, 11);
     if (num == 1) {
         $(element).attr('src', './image/forest.jpg');
     } else if (num == 2) {
@@ -376,6 +376,14 @@ function randomImage(element) {
         $(element).attr('src', './image/back4.jpg');
     } else if (num == 6) {
         $(element).attr('src', './image/back5.jpg');
+    } else if (num == 7) {
+        $(element).attr('src', './image/back6.jpg');
+    } else if (num == 8) {
+        $(element).attr('src', './image/back7.jpg');
+    } else if (num == 9) {
+        $(element).attr('src', './image/back8.jpg');
+    } else if (num == 10) {
+        $(element).attr('src', './image/back9.jpg');
     }
 }
 
@@ -530,12 +538,12 @@ async function getInfo(id, type) {
             }
 
             $('#detailContent').find('#ganres').text(str);
-            $('#detailContent').find('#runtime').text(`${Math.floor(data.episode_run_time/60)}h ${data.episode_run_time%60}m`);
+            $('#detailContent').find('#runtime').text(`${Math.trunc(data.episode_run_time/60)}h ${data.episode_run_time%60}m`);
 
             $('#detailContent').find('.box').remove();
             $('#detailContent').find('.progresBar').prepend(`<div class="box"><div class="chart" data-percent="0">0</div></div>`);
 
-            $('#detailContent').find('.chart').text(`${Math.round(data.vote_average * 10)}%`);
+            $('#detailContent').find('.chart').text(`${Math.trunc(data.vote_average * 10)}%`);
             $('#detailContent').find('.chart').attr('data-percent', (data.vote_average * 10));
 
             if (data.vote_average * 10 >= 80) {
