@@ -1879,3 +1879,45 @@ footer {
         color: white;
     }
 }
+
+section.inner_content.bg_image.community {
+    background-image: url(./image/back7.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    color: #fff;
+    h2 {
+        color: #ffff;
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+   
+    p {
+        margin-left: 20px;
+    }
+
+    .column {
+        margin-left: 20px;
+    }
+
+    a {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: transparent;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 16px;
+    transition: linear .1s;
+    border-color: #805be7;
+    background-color: #805be7;
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.9em;
+    margin-left: 20px;
+    }
+    
+}
+   
